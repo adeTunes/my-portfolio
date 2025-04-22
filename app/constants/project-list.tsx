@@ -164,23 +164,6 @@ export const projects = [
       "Surdatics is a blockchain-AI research telegram mini app platform connecting users and researchers, rewarding survey participation with high quality and ethics.",
   },
   {
-    image: "/surdatics.png",
-    liveLink: "https://t.me/surdatics_bot",
-    codeLink: "",
-    name: "Bpay",
-    technologies: [
-      "NestJs",
-      "React",
-      "MongoDB",
-      "Next.js",
-      "Mongoose",
-      "Tailwind CSS",
-      "Mantine UI",
-    ],
-    description:
-      "Surdatics is a blockchain-AI research platform connecting users and researchers, rewarding survey participation with high quality and ethics.",
-  },
-  {
     image: "/bpay.png",
     liveLink: "https://t.me/bpay_mini_bot",
     codeLink: "",
