@@ -151,11 +151,14 @@ export default function Home() {
                     <Image
                       src={item.image}
                       width={530}
-                      height={3000}
+                      height={500}
                       alt="project"
-                      className="h-auto w-full"
+                      className="h-auto max-h-[700px] w-full"
                       style={{
                         transition: "transform 10s ease-in-out 0s",
+                        objectFit: item.objectFit
+                          ? (item.objectFit as any)
+                          : undefined,
                       }}
                     />
                   </a>
