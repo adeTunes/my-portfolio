@@ -31,7 +31,7 @@ export const projects = [
   // },
   {
     image: "/cudie.png",
-    liveLink: "https://cudie-admin.africaexchange.com/",
+    liveLink: "https://cudie-admin.afexnigeria.com/",
     codeLink: "",
     name: "Cudie Admin",
     technologies: [
