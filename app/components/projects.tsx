@@ -1,71 +1,101 @@
+"use client";
+
+import React, { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "../constants/project-list";
-import ProjectLink from "./project-link";
-import Technology from "./technology";
-import { Tooltip } from "@mantine/core";
-import Image from "next/image";
-import React from "react";
-import { MdInfoOutline } from "react-icons/md";
+import {
+  CATEGORIES,
+  ProjectCategory,
+  projectToCategoryMap,
+} from "../constants/project-categories";
+import ProjectCard from "./project-card";
+import ProjectModal from "./project-modal";
+import { cn } from "../lib/utils";
 
 function Projects() {
+  const [activeCategory, setActiveCategory] = useState<ProjectCategory>("All");
+  const [selectedProject, setSelectedProject] = useState<
+    (typeof projects)[0] | null
+  >(null);
+
+  const filteredProjects = useMemo(() => {
+    if (activeCategory === "All") return projects;
+    return projects.filter((project) => {
+      const categories = projectToCategoryMap[project.name] || [];
+      return categories.includes(activeCategory);
+    });
+  }, [activeCategory]);
+
   return (
-    <section id="projects" className="py-[15rem] bg-tunes-hero">
-      <div className="app-container flex gap-[6rem] flex-col">
-        <div className="flex flex-col gap-[1rem]">
-          <h3 className="section-heading">PORTFOLIO</h3>
-          <h4 className="section-subheading">
+    <section id="projects" className="py-24 md:py-40 bg-gray-50/50">
+      <div className="app-container flex flex-col gap-16 md:gap-24">
+        {/* Header */}
+        <div className="flex flex-col items-center text-center gap-4">
+          <h3 className="section-heading tracking-[0.2em] font-black underline decoration-blue-500 decoration-4 underline-offset-8">
+            PORTFOLIO
+          </h3>
+          <h4 className="text-3xl md:text-5xl font-black text-gray-900 leading-tight max-w-2xl">
             Each project is a unique piece of development 🧩
           </h4>
         </div>
-        <section className="flex flex-col gap-[5rem]">
-          {projects?.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white shadow-lg flex items-center max-[800px]:flex-col gap-[8rem] p-[2rem] rounded-[1.7rem]"
+
+        {/* Categories Tab Navigation */}
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 p-1.5 bg-white/50 backdrop-blur-sm rounded-2xl w-fit mx-auto border border-gray-100 shadow-sm">
+          {CATEGORIES.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={cn(
+                "relative px-6 py-2.5 text-sm md:text-base font-bold transition-all duration-300 rounded-xl",
+                activeCategory === category
+                  ? "text-white"
+                  : "text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+              )}
             >
-              <div className="w-[50%] h-full max-[800px]:w-full rounded-[1.7rem] bg-tunes-project overflow-hidden shadow-lg">
-                <a href={item.liveLink} target="_blank">
-                  <Image
-                    src={item.image}
-                    width={530}
-                    height={500}
-                    alt="project"
-                    className="h-auto max-h-[700px] w-full"
-                    style={{
-                      transition: "transform 10s ease-in-out 0s",
-                      objectFit: item.objectFit
-                        ? (item.objectFit as any)
-                        : undefined,
-                    }}
-                  />
-                </a>
-              </div>
-              <div className="flex  flex-col max-[800px]:w-full gap-[30px] h-full w-[50%] overflow-auto items-center">
-                <div className="flex w-full flex-col gap-5">
-                  <h3 className="flex items-center gap-[0.2rem] font-bold text-tunes-heading text-primary">
-                    {item.name}
-                    {item.info && (
-                      <Tooltip label={item.info}>
-                        <span className="cursor-pointer hover:text-tunes-link">
-                          <MdInfoOutline />
-                        </span>
-                      </Tooltip>
-                    )}
-                  </h3>
-                  <p className="text-tunes-paragraph text-justify font-medium text-primary">
-                    {item.description}
-                  </p>
-                  <div className="flex flex-wrap w-full px-2 gap-[1rem]">
-                    {item.technologies.map((el, id) => (
-                      <Technology key={id} tech={el} />
-                    ))}
-                  </div>
-                </div>
-                <ProjectLink sourceCode={item.codeLink} live={item.liveLink} />
-              </div>
-            </div>
+              {activeCategory === category && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute inset-0 bg-blue-600 rounded-xl z-0"
+                  transition={{ type: "spring", duration: 0.5 }}
+                />
+              )}
+              <span className="relative z-10">{category}</span>
+            </button>
           ))}
-        </section>
+        </div>
+
+        {/* Projects Grid */}
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, idx) => (
+              <ProjectCard
+                key={project.name + idx}
+                project={project as any}
+                onClick={() => setSelectedProject(project as any)}
+              />
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Empty State */}
+        {filteredProjects.length === 0 && (
+          <div className="flex flex-col items-center justify-center py-20 text-gray-400">
+            <p className="text-xl font-semibold">
+              No projects found in this category.
+            </p>
+          </div>
+        )}
       </div>
+
+      {/* Detail Modal */}
+      <ProjectModal
+        isOpen={!!selectedProject}
+        project={selectedProject as any}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 }

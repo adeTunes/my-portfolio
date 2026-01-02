@@ -3,23 +3,23 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-tunes-heading py-[5rem]">
-      <div className="app-container flex max-[405px]:flex-col max-[405px]:gap-8 items-center justify-between">
-        <h3 className="text-primary text-white text-center font-bold">
-          Copyright &copy; 2024. All rights are reserved
+    <footer className="bg-gray-900 py-16">
+      <div className="app-container flex flex-col md:flex-row items-center justify-between gap-8">
+        <h3 className="text-gray-400 text-center font-bold text-lg">
+          Copyright &copy; 2026. All rights reserved.
         </h3>
-        <span className="flex items-center gap-[2rem]">
+        <div className="flex items-center gap-6">
           {socialLinks.map(({ Icon, link }, idx) => (
             <a
               key={idx}
               href={link}
-              style={{ transition: "all .2s ease-in-out" }}
-              className="cursor-pointer text-white hover:scale-[1.2] text-[2.3rem]"
+              target="_blank"
+              className="p-3 bg-gray-800 rounded-2xl text-white hover:text-blue-500 transition-all hover:scale-110 duration-300"
             >
-              <Icon size={36} />
+              <Icon size={24} />
             </a>
           ))}
-        </span>
+        </div>
       </div>
     </footer>
   );

@@ -4,6 +4,7 @@ import Footer from "./components/footer";
 import Hero from "./components/hero";
 import NavBar from "./components/nav-bar";
 import Projects from "./components/projects";
+import BackToTop from "./components/back-to-top";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Projects />
       <Contact />
       <Footer />
+      <BackToTop />
     </main>
   );
 }

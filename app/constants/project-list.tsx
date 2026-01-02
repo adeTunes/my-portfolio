@@ -30,6 +30,80 @@ export const projects = [
   //     "Landing Page for the Tonado Telgram bot - Trade and manage your crypto assets directly within Telegram",
   // },
   {
+    image: "/gopaddi.png",
+    liveLink: "https://gopaddi.com",
+    codeLink: "",
+    name: "Gopaddi",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "React Hook Form",
+      "Shadcn UI",
+      "Tiptap Editor",
+      "Tanstack Query",
+      "Framer Motion",
+      "Websocket",
+      "Paystack",
+    ],
+    description:
+      "A sophisticated travel and lifestyle ecosystem facilitating global exploration. I engineered the high-performance frontend and collaborative planning engine, integrating AI-driven insights and multi-currency payment systems to provide an elite, all-in-one travel experience.",
+  },
+  {
+    image: "/medicinex.png",
+    liveLink: "https://medicinex.co.uk",
+    codeLink: "",
+    name: "Medicinex",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Stripe",
+      "React Hook Form",
+      "Shadcn UI",
+      "Tanstack Query",
+      "Framer Motion",
+    ],
+    description:
+      "A mission-critical healthcare marketplace connecting patients to a secure network of providers. I architected the patient-facing platform with a focus on intuitive medical record management, secure consultations, and seamless pharmaceutical ordering workflows.",
+  },
+  {
+    image: "/medicinex-admin.png",
+    liveLink: "https://admin.medicinex.co.uk",
+    codeLink: "",
+    name: "Medicinex Admin",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Stripe",
+      "React Hook Form",
+      "Shadcn UI",
+      "Tiptap Editor",
+      "Notion-like Editor",
+      "Tanstack Query",
+      "Framer Motion",
+    ],
+    description:
+      "The administrative backbone of the Medicinex ecosystem. I developed high-reliability back-office tools for provider verification, pharmaceutical logistics, and automated reporting, ensuring operational excellence across the entire platform.",
+  },
+  {
+    image: "/oda-admin.png",
+    liveLink: "https://uat-dashboard.mobiletraderv3.com/login",
+    codeLink: "",
+    name: "ODA Admin",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "React Hook Form",
+      "Radix UI",
+      "Tanstack Query",
+    ],
+    description:
+      "A high-performance command center for logistics and supply chain management. I implemented scalable route-optimization logic and real-time tracking systems to streamline complex delivery opertions at scale.",
+  },
+  {
     image: "/cudie.png",
     liveLink: "https://cudie-admin.afexnigeria.com/",
     codeLink: "",
@@ -43,7 +117,7 @@ export const projects = [
       "I18next",
     ],
     description:
-      "A modern web application for client, transaction management and the administration of the Cudie Fintech mobile app.",
+      "An enterprise-grade fintech administrative portal. I engineered the secure transaction management suite and KYC verification pipelines, providing operational oversight for the thousands of users within the Cudie ecosystem.",
   },
   {
     image: "/bankx.png",
@@ -62,7 +136,7 @@ export const projects = [
       "Paystack",
     ],
     description:
-      "A robust React/Next.js-based admin dashboard for a digital banking platform, enabling secure management of users, loans, transactions, and permissions.",
+      "A high-security financial administration suite. I architected the core management modules for borrower profiles, loan lifecycle tracking, and granular permission-based access control, ensuring a robust and compliant digital banking experience.",
   },
   {
     image: "/hrms.jpeg",
@@ -79,20 +153,8 @@ export const projects = [
       "Recharts",
       "Chart.js",
     ],
-    description: (
-      <span>
-        The AFEX Talent Management Portal is an HR platform with three user
-        groups: <br />
-        &nbsp;-Admins (HR Team) handle onboarding, offboarding, appraisals,
-        leave policies, promotions, announcements, surveys, and profile edit
-        approvals. <br />
-        &nbsp;-Supervisors/Team Leads approve team member leaves and appraisals.
-        <br />
-        &nbsp;-Staff apply for leave, complete appraisals, view team leaves and
-        anniversaries, and edit profiles. This platform streamlines HR
-        operations, enabling seamless management across all levels.
-      </span>
-    ),
+    description:
+      "A comprehensive enterprise HRMS platform. I engineered the multi-tenant architecture supporting distinct workflows for Admins, Supervisors, and Staff, streamlining mission-critical operations like appraisals, leave management, and organizational surveys with a focus on scalability and user efficiency.",
   },
   {
     image: "/bms.jpeg",
@@ -111,7 +173,7 @@ export const projects = [
       "Chart.js",
     ],
     description:
-      "BMS (Budget Management System) is a finance tool tailored for organizational budget and expense management, BMS incorporates essential features such as organization structure management, staff onboarding, request creation, approval workflows, denial or escalation processes, approval limits, and real-time communication among request participants. The web app streamlines financial processes, offering an intuitive platform for effective budget management and expense tracking within organizations.",
+      "An enterprise-grade financial control system. I developed the complex organizational structure management, approval limit logic, and real-time request tracking workflows that enable large organizations to maintain strict oversight over multi-departmental spending.",
   },
   {
     image: "/arcfusion.png",
@@ -128,7 +190,7 @@ export const projects = [
       "Cloudinary",
     ],
     description:
-      "Arc & K Fusion is an e-commerce platform focusing primarily on the sales of watches and other wears",
+      "A premium full-stack e-commerce experience specializing in luxury timepieces. I built the end-to-end solution using NestJS and MongoDB for the backend, with a highly responsive React/Next.js frontend to deliver a sleek, boutique shopping experience.",
   },
   {
     image: "/julswap-terminal.png",
@@ -146,7 +208,7 @@ export const projects = [
       "Psy Agent",
     ],
     description:
-      "The JulSwap AI Terminal is a versatile tool designed to simplify your blockchain interactions and enhance your trading and token management experience. It currently supports the following functions: Transfer, Trade, Add Liquidity (LP), Mint NFTs, Deploy Tokens and blockchains: Binance Smart Chain (BSC), Sonic Blockchain",
+      "A sophisticated blockchain interface leveraging AI to simplify complex on-chain interactions. I engineered the terminal to support seamless asset transfers, liquidity provisioning, and NFT minting across multiple chains (BSC, Sonic), focusing on performance and developer-centric UX.",
   },
   {
     image: "/mapx.jpeg",
@@ -162,7 +224,7 @@ export const projects = [
       "React Google Maps API",
     ],
     description:
-      "MAPX is a web application that serves the agricultural sector by providing a platform for organizations to efficiently manage and visualize their farmland data. Using Google Maps integration, it allows users to record and monitor the location and size of farmlands, distinguishing between actual farmlands and those within residential areas. The inclusion of Highcharts enables a global heatmap visualization of farmland locations, offering a comprehensive view of agricultural landscapes. MAPX streamlines the process of land management for agricultural organizations, enhancing their ability to make informed decisions.",
+      "An advanced geospatial analytics platform for the agricultural sector. I integrated complex Google Maps visualizations and Highcharts data-heatmaps to help organizations monitor farmland productivity and geographical distribution in real-time.",
   },
   {
     image: "/cgs.png",
@@ -178,7 +240,7 @@ export const projects = [
       "Chart.js",
     ],
     description:
-      "CGS is a reporting admin tool designed to complement a mobile application integrated with a machine learning model, CGS assesses the quality of agricultural commodities. Leveraging computer vision from the model and the mobile camera, it categorizes commodities into grades based on predetermined impurity measurements affecting quality. The web app then facilitates visual representation of analysis results through intuitive charts and tables, providing a comprehensive overview of commodity quality. CGS enhances efficiency in agricultural quality control and reporting.",
+      "A high-precision quality control suite powered by computer vision. I bridged the gap between a machine-learning-driven mobile application and this comprehensive reporting dashboard, enabling real-time grading and analytical visualization of agricultural commodities.",
     info: "Open on a large screen device, app is not responsive",
   },
   {
@@ -188,12 +250,12 @@ export const projects = [
     name: "Unified Access Control System for AFEX",
     technologies: ["React", "Next.js", "Tailwind CSS", "Mantine UI"],
     description:
-      "The AFEX UACS web application was built to manage applications that are authorised on the AFEX SSO system and also manage staff access (grant or revoke access to internal systems) to these applications",
+      "An enterprise-grade Identity and Access Management (IAM) hub. I designed the centralized dashboard to manage application authorizations and staff permissions across the entire AFEX ecosystem, ensuring secure and streamlined SSO operations.",
     info: "Open on a large screen device, app is not responsive",
   },
   {
     image: "/retweeted.png",
-    liveLink: "https://app.retweeted.ai/",
+    liveLink: "https://retweeted.ai/",
     codeLink: "",
     name: "Retweeted AI",
     technologies: [
@@ -237,7 +299,7 @@ export const projects = [
       "Mantine UI",
     ],
     description:
-      "Surdatics is a blockchain-AI research telegram mini app platform connecting users and researchers, rewarding survey participation with high quality and ethics.",
+      "A cutting-edge Telegram Mini App (TMA) for blockchain-AI research. I architected the high-throughput NestJS backend and optimized the React frontend to seamlessly bridge users and researchers in a secure, decentralized survey ecosystem.",
   },
   {
     image: "/bpay.png",
@@ -255,7 +317,7 @@ export const projects = [
       "Mantine UI",
     ],
     description:
-      "BPay is a gamified Play-to-Earn mini app platform on Telegram designed to make earning rewards fun and engaging. It is the official mini app of the Boundless Pay application",
+      "A high-engagement gamified Play-to-Earn (P2E) Telegram mini-platform. I developed the robust NestJS-powered backend to manage real-time rewards and community engagement, seamlessly integrating with the Boundless Pay financial ecosystem.",
   },
   {
     image: "/afriq.png",
@@ -292,7 +354,7 @@ export const projects = [
       "Bootstrap",
     ],
     description:
-      "Tonnie is a gamified Play-to-Earn platform designed to make earning rewards fun and engaging. Trade, play, and refer friends, and a TON based investment feature to unlock progressively higher returns and rewards.",
+      "A performant gamified investment platform on Tonic/Telegram. I engineered the mission-critical backend using NestJS, BullMQ, and Cron for complex reward distributions and real-time transaction processing.",
   },
   // {
   //   image: "/propyrite.png",
