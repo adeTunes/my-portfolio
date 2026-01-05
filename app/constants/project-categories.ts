@@ -3,6 +3,7 @@ export type ProjectCategory =
   | "Featured"
   | "Admin & Fintech"
   | "Telegram Mini Apps"
+  | "Mobile Applications"
   | "Tools & Platforms";
 
 export const CATEGORIES: ProjectCategory[] = [
@@ -10,6 +11,7 @@ export const CATEGORIES: ProjectCategory[] = [
   "Featured",
   "Admin & Fintech",
   "Telegram Mini Apps",
+  "Mobile Applications",
   "Tools & Platforms",
 ];
 
@@ -33,4 +35,8 @@ export const projectToCategoryMap: Record<string, ProjectCategory[]> = {
   BPay: ["Telegram Mini Apps"],
   Afriq: ["Telegram Mini Apps"],
   "Tonnie Coin": ["Telegram Mini Apps"],
+  Ghoolf: ["Featured", "Mobile Applications"],
+  "84": ["Featured", "Mobile Applications", "Admin & Fintech"],
+  Easichore: ["Mobile Applications"],
+  Pipn: ["Mobile Applications"],
 };

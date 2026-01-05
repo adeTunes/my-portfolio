@@ -29,6 +29,7 @@ export const projects = [
   //   description:
   //     "Landing Page for the Tonado Telgram bot - Trade and manage your crypto assets directly within Telegram",
   // },
+
   {
     image: "/gopaddi.png",
     liveLink: "https://gopaddi.com",
@@ -86,6 +87,56 @@ export const projects = [
     ],
     description:
       "The administrative backbone of the Medicinex ecosystem. I developed high-reliability back-office tools for provider verification, pharmaceutical logistics, and automated reporting, ensuring operational excellence across the entire platform.",
+  },
+  {
+    image: "/ghoolf.png",
+    liveLink: "",
+    codeLink: "",
+    name: "Ghoolf",
+    technologies: [
+      "React Native",
+      "Expo",
+      "Nativewind",
+      "OAuth (Apple & Google)",
+      "AWS S3",
+    ],
+    description:
+      "A specialized mobile application for a golf club platform. I engineered complex video capture, preview, and upload flows with progress tracking and AWS S3 integration. The app features secure OAuth-based authentication and is currently in TestFlight.",
+    info: "Currently in TestFlight",
+    objectFit: "contain",
+  },
+  {
+    image: "/84.png",
+    liveLink: "",
+    codeLink: "",
+    name: "84",
+    technologies: ["React Native", "Expo", "Nativewind", "Zustand"],
+    description:
+      "A high-performance fintech mobile application. I am currently developing the core features, including secure wallet flows, transaction history, authentication, and comprehensive user profile management.",
+    info: "Currently in Development",
+    objectFit: "contain",
+  },
+  {
+    image: "/easichore.png",
+    liveLink: "",
+    codeLink: "",
+    name: "Easichore",
+    technologies: ["React Native", "Expo", "Nativewind"],
+    description:
+      "A modern mobile application designed to streamline chore management and household organization. I am architecting the cross-platform experience with a focus on intuitive user workflows.",
+    info: "Currently in Development",
+    objectFit: "contain",
+  },
+  {
+    image: "/pipn.png",
+    liveLink: "",
+    codeLink: "",
+    name: "Pipn",
+    technologies: ["React Native", "Expo", "Nativewind", "WebSockets"],
+    description:
+      "A social trader community mobile application. I am building the real-time discussion engine and user engagement features to facilitate seamless interaction within the trading community.",
+    info: "Currently in Development",
+    objectFit: "contain",
   },
   {
     image: "/oda-admin.png",
