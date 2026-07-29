@@ -1,52 +1,68 @@
-import React from "react";
-import { MdOutlineEmail } from "react-icons/md";
-import { TbMapSearch } from "react-icons/tb";
+import { profile } from '@/app/data/profile'
+import { DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from './icons'
 
-function Contact() {
+export default function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-40 bg-gray-50/30">
-      <div className="app-container flex gap-12 md:gap-24 flex-col">
-        <div className="flex flex-col gap-4 text-center md:text-left">
-          <h3 className="text-blue-600 font-black tracking-widest text-lg uppercase">
-            CONTACT
-          </h3>
-          <p className="text-3xl md:text-5xl font-black text-gray-900">
-            Hit me up! 👇
-          </p>
-        </div>
+    <section id="contact" className="section">
+      <div className="shell">
+        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          Get in touch
+        </h2>
 
-        <div className="flex items-center gap-12 md:gap-24 flex-wrap justify-center md:justify-start">
-          <div className="flex items-center gap-6 group">
-            <span className="w-20 h-20 bg-white shadow-xl text-blue-600 rounded-3xl flex items-center justify-center transition-transform group-hover:scale-110 group-hover:rotate-6 duration-300">
-              <TbMapSearch size={36} />
-            </span>
-            <div className="flex flex-col gap-1">
-              <h3 className="text-xl font-black text-gray-900">Location</h3>
-              <p className="text-lg font-medium text-gray-600">
-                Lagos, Nigeria
-              </p>
-            </div>
-          </div>
+        <p className="mt-4 max-w-2xl leading-relaxed text-muted">
+          {profile.availability} The fastest way to reach me is email — I reply
+          to everything.
+        </p>
 
-          <div className="flex items-center gap-6 group">
-            <span className="w-20 h-20 bg-white shadow-xl text-blue-600 rounded-3xl flex items-center justify-center transition-transform group-hover:scale-110 group-hover:-rotate-6 duration-300">
-              <MdOutlineEmail size={36} />
-            </span>
-            <div className="flex flex-col gap-1">
-              <h3 className="text-xl font-black text-gray-900">Mail</h3>
-              <a
-                href="mailto:babatundeadebowale1998@gmail.com"
-                className="text-lg font-medium text-gray-600 hover:text-blue-600 transition-colors"
-                style={{ wordBreak: "break-all" }}
-              >
-                babatundeadebowale1998@gmail.com
-              </a>
-            </div>
-          </div>
+        <a
+          href={`mailto:${profile.email}`}
+          className="mt-6 inline-block break-all text-xl font-medium tracking-tight text-accent hover:underline sm:text-2xl"
+        >
+          {profile.email}
+        </a>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <ContactLink href={profile.github} label="GitHub">
+            <GitHubIcon />
+          </ContactLink>
+          <ContactLink href={profile.linkedin} label="LinkedIn">
+            <LinkedInIcon />
+          </ContactLink>
+          <ContactLink href={`mailto:${profile.email}`} label="Email">
+            <MailIcon />
+          </ContactLink>
+          <ContactLink href={profile.cvPath} label="Download CV" download>
+            <DownloadIcon />
+          </ContactLink>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Contact;
+function ContactLink({
+  href,
+  label,
+  download,
+  children,
+}: {
+  href: string
+  label: string
+  download?: boolean
+  children: React.ReactNode
+}) {
+  const external = href.startsWith('http')
+
+  return (
+    <a
+      href={href}
+      download={download}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+      className="inline-flex items-center gap-2 rounded border border-line px-3 py-2 text-sm transition-colors hover:border-accent hover:text-accent"
+    >
+      {children}
+      {label}
+    </a>
+  )
+}

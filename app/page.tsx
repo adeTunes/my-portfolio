@@ -1,21 +1,27 @@
-import About from "./components/about";
-import Contact from "./components/contact";
-import Footer from "./components/footer";
-import Hero from "./components/hero";
-import NavBar from "./components/nav-bar";
-import Projects from "./components/projects";
-import BackToTop from "./components/back-to-top";
+import About from './components/about'
+import Contact from './components/contact'
+import ExperienceSection from './components/experience'
+import Footer from './components/footer'
+import Hero from './components/hero'
+import ProjectIndex from './components/project-index'
+import RevealScript from './components/reveal-script'
+import SelectedWork from './components/selected-work'
+import SiteHeader from './components/site-header'
 
 export default function Home() {
   return (
-    <main className="bg-white">
-      <NavBar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
+    <>
+      <SiteHeader />
+      <main>
+        <Hero />
+        <SelectedWork />
+        <ProjectIndex />
+        <ExperienceSection />
+        <About />
+        <Contact />
+      </main>
       <Footer />
-      <BackToTop />
-    </main>
-  );
+      <RevealScript />
+    </>
+  )
 }
