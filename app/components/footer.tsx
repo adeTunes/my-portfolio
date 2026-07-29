@@ -1,28 +1,14 @@
-import { socialLinks } from "../constants/social-links";
-import React from "react";
+import { profile } from '@/app/data/profile'
 
-function Footer() {
+export default function Footer() {
   return (
-    <footer className="bg-gray-900 py-16">
-      <div className="app-container flex flex-col md:flex-row items-center justify-between gap-8">
-        <h3 className="text-gray-400 text-center font-bold text-lg">
-          Copyright &copy; 2026. All rights reserved.
-        </h3>
-        <div className="flex items-center gap-6">
-          {socialLinks.map(({ Icon, link }, idx) => (
-            <a
-              key={idx}
-              href={link}
-              target="_blank"
-              className="p-3 bg-gray-800 rounded-2xl text-white hover:text-blue-500 transition-all hover:scale-110 duration-300"
-            >
-              <Icon size={24} />
-            </a>
-          ))}
-        </div>
+    <footer className="border-t border-line py-8">
+      <div className="shell flex flex-wrap items-center justify-between gap-3 text-xs text-faint">
+        <p>
+          © {new Date().getFullYear()} {profile.name} · {profile.location}
+        </p>
+        <p>Built with Next.js and TailwindCSS.</p>
       </div>
     </footer>
-  );
+  )
 }
-
-export default Footer;
